@@ -1,0 +1,10 @@
+---
+- name: Install wget
+  become_user: root
+  apt:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+    - wget
+    - curl
+    - htop
