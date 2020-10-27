@@ -1,0 +1,11 @@
+---
+- hosts: 127.0.0.1
+  connection: local
+  become: true
+  become_user: "{{user}}"
+  
+  tasks:
+    - include: tasks/python.yaml
+    - include: tasks/git.yaml
+    - include: tasks/terminator.yaml
+    - include: tasks/java.yaml

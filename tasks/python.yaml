@@ -1,0 +1,6 @@
+---
+- name: Install python 3
+  become_user: root
+  apt:
+    name: python3
+    state: latest

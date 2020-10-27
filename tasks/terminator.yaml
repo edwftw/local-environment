@@ -1,0 +1,6 @@
+---
+- name: Install terminator
+  become_user: root
+  apt:
+    name: terminator
+    state: latest
