@@ -5,8 +5,9 @@
   become_user: "{{user}}"
 
   tasks:
-#    - include: tasks/python.yaml
-#    - include: tasks/git.yaml
-#    - include: tasks/terminator.yaml
-#    - include: tasks/java.yaml
-    - include: tasks/utils.yaml
+   - include: tasks/python.yaml
+   - include: tasks/git.yaml
+   - include: tasks/terminator.yaml
+   - include: tasks/java.yaml
+   - include: tasks/utils.yaml
+   - include: tasks/chrome.yaml
