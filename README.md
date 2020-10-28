@@ -28,4 +28,3 @@ sudo ansible-pull -e user={your-home-user} -U https://github.com/pauloedwardo/lo
  - Add Postman
  - Add NPM
  - Add Node
- - Add Google Chrome
