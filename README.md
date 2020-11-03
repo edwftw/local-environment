@@ -1,7 +1,7 @@
 # Dev Local Environment
 
 ## Pre-requirements
-
+- Ubuntu (64 bits) - Installed and tested with 20.04.1 LTS
 - [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html)
 
 ## How to install
@@ -21,10 +21,19 @@ sudo ansible-playbook -e user={your-home-user} -v local.yaml
 sudo ansible-pull -e user={your-home-user} -U https://github.com/pauloedwardo/local-environment.git
 ```
 
-- TO DO
+### What will be installed?
+- Google Chrome
+- Git
+- Java (JDK)
+- Visual Studio Code
+- Python
+- Terminator
+- Postman
+- Utilitaries: wget, htop, curl
+
+### TO DO
  - Add Terminator config
- - Add VS Code installation
  - Add Intellij
- - Add Postman
  - Add NPM
  - Add Node
+ - Add Docker

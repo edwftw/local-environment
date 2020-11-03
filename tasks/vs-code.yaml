@@ -1,27 +1,17 @@
 ---
-- name: Install vscode key
-  tags:
-    - dev-env
+- name: Download VS Code
   become_user: root
-  shell: rpm --import https://packages.microsoft.com/keys/microsoft.asc
+  shell: wget -q -O vscode_install.deb https://go.microsoft.com/fwlink/?LinkID=760868
 
-- name: Install vscode repo
-  tags:
-    - dev-env
+- name: Check VS Code file name
+  shell: find vscode_install.deb
+  register: vs_code_file
+
+- name: Install VS Code
   become_user: root
-  shell: sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
+  shell: apt install ./{{ vs_code_file.stdout }}
 
-- name: Install vscode
-  tags:
-    - dev-env
-  become_user: root
-  dnf:
-    name: code
-    state: latest
-
-- name: Install vscode extensions
-  tags:
-    - vscode
+- name: Install VS Code extensions
   command: code --install-extension {{ item }}
   with_items:
     - dbaeumer.vscode-eslint
@@ -30,3 +20,8 @@
     - pkief.material-icon-theme
     - ms-azuretools.vscode-docker
     - vscoss.vscode-ansible
+
+- name: Remove VS Code file installation
+  file:
+    path: ./vscode_install.deb
+    state: absent

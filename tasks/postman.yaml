@@ -1,0 +1,38 @@
+---
+# - name: Download Postman
+#   become_user: root
+#   shell: wget -q -O postman.tar.gz https://dl.pstmn.io/download/latest/linux64
+
+# - name: Check Postman file
+#   shell: find postman.tar.gz
+#   register: postman_file
+
+# - name: Extract Postman file
+#   shell: tar -xzf postman.tar.gz
+
+# - name: Move Postman files to work dir
+#   become_user: root
+#   shell: mv Postman /opt/Postman
+
+# - name: Create symbolic link
+#   become_user: root
+#   shell: ln -s /opt/Postman/Postman /usr/bin/postman
+
+# - name: Create Desktop Postman file
+#   become_user: root
+#   copy:
+#     dest: /usr/share/applications/postman.desktop
+#     content: |
+#       [Desktop Entry]
+#       Encoding=UTF-8
+#       Name=Postman
+#       Exec=/opt/Postman/Postman
+#       Icon=/opt/Postman/app/resources/app/assets/icon.png
+#       Terminal=false
+#       Type=Application
+#       Categories=Development;
+
+- name: Remove Postman file installation
+  file:
+    path: ./postman.tar.gz
+    state: absent
