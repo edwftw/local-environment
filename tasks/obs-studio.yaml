@@ -1,0 +1,16 @@
+---
+- name: Configure FFmpeg dependecy
+  become_user: root
+  apt:
+    name: ffmpeg
+    state: present
+
+- name: Add PPA OBS Studio repo
+  become_user: root
+  shell: add-apt-repository ppa:obsproject/obs-studio
+
+- name: Install OBS Studio
+  become_user: root
+  apt:
+    name: obs-studio
+    state: present

@@ -30,6 +30,7 @@ sudo ansible-pull -e user={your-home-user} -U https://github.com/pauloedwardo/lo
 - Terminator
 - Postman
 - Utilitaries: wget, htop, curl
+- OBS Studio
 
 ### TO DO
  - Add Terminator config
