@@ -1,0 +1,14 @@
+---
+- name: Add PPA DBeaver repository
+  become_user: root
+  shell: add-apt-repository ppa:serge-rider/dbeaver-ce
+
+- name: Update repositories 
+  become_user: root
+  shell: apt-get update -y
+
+- name: Install DBeaver
+  become_user: root
+  apt:
+    name: dbeaver-ce
+    state: present
