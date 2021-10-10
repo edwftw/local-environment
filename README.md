@@ -21,7 +21,7 @@ sudo ansible-playbook -e user={your-home-user} -v local.yaml
 sudo ansible-pull -e user={your-home-user} -U https://github.com/pauloedwardo/local-environment.git
 ```
 
-### What will be installed?
+### What will be installed/donwloaded?
 - Google Chrome
 - Git
 - Java (JDK) 8
@@ -33,9 +33,9 @@ sudo ansible-pull -e user={your-home-user} -U https://github.com/pauloedwardo/lo
 - OBS Studio
 - DBeaver CE
 - Docker
+- Jetbrains Toolbox 1.21.9712
 
 ### TO DO
  - Add Terminator config
- - Add Intellij
  - Add NPM
  - Add Node
