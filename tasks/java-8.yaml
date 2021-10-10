@@ -1,0 +1,21 @@
+---
+- name: Check if directory exists
+  stat: 
+    path: /usr/lib/jvm/java-8-openjdk-amd64
+  register: jdk_dir  
+
+- name: Install Oracle Java 8
+  become_user: root
+  apt: 
+    name: openjdk-8-jdk-headless 
+    state: latest
+  when: not jdk_dir.stat.exists
+  
+- name: Export JAVA_HOME into .bashrc
+  blockinfile:
+    path: ~/.bashrc
+    insertafter: EOF
+    marker: "#{maker} JAVA_HOME by Ansible"
+    block: |
+      export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+      export PATH=$PATH:$JAVA_HOME/bin

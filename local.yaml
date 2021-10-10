@@ -8,7 +8,8 @@
     - include: tasks/python.yaml
     - include: tasks/git.yaml
     - include: tasks/terminator.yaml
-    - include: tasks/java.yaml
+    - include: tasks/java-8.yaml
+    - include: tasks/java-11.yaml
     - include: tasks/utils.yaml
     - include: tasks/chrome.yaml
     - include: tasks/vs-code.yaml
@@ -16,4 +17,4 @@
     - include: tasks/obs-studio.yaml
     - include: tasks/dbeaver.yaml
     - include: tasks/docker.yaml
-    - include: tasks/jetbrains-toolbox.yaml
+    - include: tasks/jetbrains-toolbox.yaml    

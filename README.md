@@ -24,7 +24,7 @@ sudo ansible-pull -e user={your-home-user} -U https://github.com/pauloedwardo/lo
 ### What will be installed/donwloaded?
 - Google Chrome
 - Git
-- Java (JDK) 8
+- Java (JDK) 8 and 11
 - Visual Studio Code
 - Python 3
 - Terminator
