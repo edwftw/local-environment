@@ -15,3 +15,4 @@
     - include: tasks/postman.yaml 
     - include: tasks/obs-studio.yaml
     - include: tasks/dbeaver.yaml
+    - include: tasks/docker.yaml

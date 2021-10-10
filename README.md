@@ -24,18 +24,18 @@ sudo ansible-pull -e user={your-home-user} -U https://github.com/pauloedwardo/lo
 ### What will be installed?
 - Google Chrome
 - Git
-- Java (JDK)
+- Java (JDK) 8
 - Visual Studio Code
-- Python
+- Python 3
 - Terminator
 - Postman
 - Utilitaries: wget, htop, curl
 - OBS Studio
 - DBeaver CE
+- Docker
 
 ### TO DO
  - Add Terminator config
  - Add Intellij
  - Add NPM
  - Add Node
- - Add Docker

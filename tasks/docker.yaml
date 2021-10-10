@@ -1,0 +1,41 @@
+---
+- name: Update apt get
+  become_user: root
+  shell: apt-get update -y
+
+- name: Installing dependencies
+  become_user: root
+  apt:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+    - apt-transport-https
+    - ca-certificates
+    - curl
+    - gnupg
+    - lsb-release
+
+- name: Add Docker repository
+  become_user: root
+  shell:  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+- name: Set up stable repository
+  become_user: root
+  shell: > 
+    echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] 
+    https://download.docker.com/linux/ubuntu 
+    $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+- name: Update apt get
+  become_user: root
+  shell: apt-get update -y
+
+- name: Install Docker
+  become_user: root
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - docker-ce
+    - docker-ce-cli
+    - containerd.io
