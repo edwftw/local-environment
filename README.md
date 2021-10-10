@@ -33,6 +33,7 @@ sudo ansible-pull -e user={your-home-user} -U https://github.com/pauloedwardo/lo
 - OBS Studio
 - DBeaver CE
 - Docker
+- Docker-compose
 - Jetbrains Toolbox 1.21.9712
 
 ### TO DO
